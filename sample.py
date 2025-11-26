@@ -7,11 +7,11 @@ from model import GPTConfig, GPT
 
 init_from = 'resume'
 out_dir = 'out'
-start = "Pete Campbell\n"
-num_samples = 1 # keep at 5 just to see numerous results
-max_new_tokens = 100 # number of tokens generated in each sample
-temperature = 0.8 # if less than 1, more random
-top_k = 200 
+start = "FILE:prompt.txt\n"
+num_samples = 5 # keep at 5 just to see numerous results
+max_new_tokens = 1000 # number of tokens generated in each sample
+temperature = 0.4 # if less than 1, more random
+top_k = 200
 seed = 1337
 device = 'cuda'
 dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16' 
